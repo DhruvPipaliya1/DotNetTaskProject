@@ -6,27 +6,31 @@ namespace ConsoleApp1
 {
     internal class TemperatureAnalyzer
     {
-        public int CalculateHotDays(int[] temperature)
+        public (int HotDays, int Average) LoopCalculation(int[] temp)
         {
-            int hotDays = 0;
-            for(int i=0; i<temperature.Length; i++)
+            int HotDays = 0;
+            int sum = 0;
+            for (int i = 0; i < temp.Length; i++)
             {
-                if (temperature[i] > 30)
+                sum += temp[i];
+                if (temp[i] > 30)
                 {
-                    hotDays++;
+                    HotDays++;
                 }
             }
-            return hotDays;
+            int Average = sum / temp.Length;
+            return (HotDays, Average);
+        }
+        public int CalculateHotDays(int[] temperature)
+        {
+            var result = LoopCalculation(temperature);
+            return result.HotDays;
         }
 
         public int AverageTemperature(int[] temperature)
         {
-            int sum = 0;
-            for(int i=0; i<temperature.Length; i++)
-            {
-                sum += temperature[i];
-            }
-            return sum / temperature.Length;
+            var result = LoopCalculation(temperature);
+            return result.Average;
         }
 
         public string CategorizeTemperature(int temperature)
@@ -35,7 +39,7 @@ namespace ConsoleApp1
             {
                 return "Cold";
             }
-            if (temperature > 30)
+            else if (temperature > 30)
             {
                 return "Hot";
             }
