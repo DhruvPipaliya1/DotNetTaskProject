@@ -6,37 +6,37 @@ namespace ConsoleApp1
 {
     internal class EmployeeAttendenceTracker
     {
-        public int CalculateTotalHour(int[] attendence)
+        public (int totalHour, int overtimeHour) LoopCalculation(int[] attendence)
         {
             int totalHour = 0;
+            int overtimeHour = 0;
             for (int i = 0; i < attendence.Length; i++)
             {
                 totalHour += attendence[i];
-            }
-            return totalHour;
-        }
-
-        public int CalculateOvertime(int[] attendence)
-        {
-            int overtimeHour = 0;
-            for(int i=0; i< attendence.Length; i++)
-            {
-                if( attendence[i] > 8)
+                if (attendence[i] > 8)
                 {
                     overtimeHour++;
                 }
             }
-            return overtimeHour;
+            return (totalHour, overtimeHour);
+        }
+
+        public int CalculateTotalHour(int[] attendence)
+        {
+            var result = LoopCalculation(attendence);
+            return result.totalHour;
+        }
+
+        public int CalculateOvertime(int[] attendence)
+        {
+            var result = LoopCalculation(attendence);
+            return result.overtimeHour;
         }
 
         public int UpdateTotalHour(int todaysHour, int[] attendence)
         {
-            int totalHour = 0;
-            for (int i = 0; i < attendence.Length; i++)
-            {
-                totalHour += attendence[i];
-            }
-            return totalHour + todaysHour;
+            var result = LoopCalculation(attendence);
+            return result.totalHour + todaysHour;
         }
     }
 
