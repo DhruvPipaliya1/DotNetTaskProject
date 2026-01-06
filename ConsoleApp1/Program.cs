@@ -34,6 +34,41 @@ namespace project
             //Console.Write("Enter Parking Hours: ");
             //int userInput = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("Your Fee: " + ParkCalculator.UserParkingFee(userInput));
+
+
+
+            //int[] stocks = { 50, 5, 25, 0, 15 };
+            //var CalculateStock = new InventoryStockCheck();
+            //Console.WriteLine("Out of Stock: " + CalculateStock.CalculateOutOfStockItems(stocks));
+            //Console.WriteLine("Low Stock items: " + CalculateStock.CalculateLowStockItems(stocks));
+            //Console.Write("Enter item number (0-4): ");
+            //int stockNumber = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Enter restock quantity: ");
+            //int stockQuantity = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("New Quantity: " + CalculateStock.AddNewItem(stockNumber, stockQuantity, stocks));
+
+
+
+            //int[] units = { 150, 200, 180, 220, 160 };
+            //var ElectricityBill = new ElectricityBillCalculator();
+            //Console.WriteLine("Total Units: " + ElectricityBill.TotalElectricityUnits(units));
+            //Console.WriteLine("High Usage Months: " + ElectricityBill.HighUsageMonthsCount(units));
+            //Console.Write("Enter Current Usage: ");
+            //int userInput = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Your Bill: " + ElectricityBill.CurrentUsage(userInput, units));
+
+
+
+
+            //int[] number = { 4, 5, 6 };
+            //var CalculateFactorial = new NumberFactorialCalculator();
+            //for(int i=0; i<number.Length; i++)
+            //{
+            //    Console.WriteLine($"{number[i]}! = {CalculateFactorial.FindFactorial(number[i])}");
+            //}
+            //Console.Write("Enter a Number: ");
+            //var userInput = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine($"{userInput}! = {CalculateFactorial.FindFactorial(userInput)}");
         }
     }
 
