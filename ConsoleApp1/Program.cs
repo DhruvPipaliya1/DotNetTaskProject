@@ -10,7 +10,7 @@ namespace project
             //int[] temperature = { 22, 35, 18, 40, 28 };
             //var TempAnalyzer = new TemperatureAnalyzer();
             //Console.WriteLine("Hot Days: " + TempAnalyzer.CalculateHotDays(temperature));
-            //Console.WriteLine("Hot Days: " + TempAnalyzer.AverageTemperature(temperature));
+            //Console.WriteLine("Average Temperature: " + TempAnalyzer.AverageTemperature(temperature));
             //Console.Write("Enter Temperature: ");
             //int CurrentTemp = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("Category: " + TempAnalyzer.CategorizeTemperature(CurrentTemp));

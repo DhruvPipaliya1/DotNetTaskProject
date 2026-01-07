@@ -6,6 +6,17 @@ namespace ConsoleApp1
 {
     internal class ParkingFeeCalculator
     {
+        public int CalculateMoreThanSixHours(int hours)
+        {
+            int fee = 0;
+            while (hours >= 6)
+            {
+                fee += 50;
+                hours -= 6;
+            }
+            fee += hours * 10;
+            return fee;
+        }
         public int TotalParkingFee(int[] parkHour)
         {
             int totalFee = 0;
@@ -15,18 +26,14 @@ namespace ConsoleApp1
                 {
                     totalFee += parkHour[i] * 10; 
                 }
-                if (parkHour[i] == 6)
+                else if (parkHour[i] == 6)
                 {
                     totalFee += 50;
                 }
-                if (parkHour[i] > 6)
+                else if (parkHour[i] > 6)
                 {
-                    while (parkHour[i] > 6)
-                    {
-                        totalFee += 50;
-                        parkHour[i] -= 6;
-                    }
-                    totalFee += parkHour[i] * 10;
+                    int result = CalculateMoreThanSixHours(parkHour[i]);
+                    totalFee += result;
                 }
             }
             return totalFee;
@@ -42,6 +49,11 @@ namespace ConsoleApp1
                 }
             }
             return parkers;
+        }
+
+        public int UserParkingFee(int userHour) {
+            int userFee = CalculateMoreThanSixHours(userHour);
+            return userFee;
         }
     }
 }
