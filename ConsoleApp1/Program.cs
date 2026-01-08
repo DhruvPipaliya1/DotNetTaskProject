@@ -27,7 +27,7 @@ namespace project
 
 
 
-            //int[] parkHour = {2, 5, 1, 8, 3};
+            //int[] parkHour = {2, 5, 1, 8, 3 };
             //var ParkCalculator = new ParkingFeeCalculator();
             //Console.WriteLine("Total Fee: " + ParkCalculator.TotalParkingFee(parkHour));
             //Console.WriteLine("Full Day Parkers: " + ParkCalculator.CalculateFullDaysParkers(parkHour));
@@ -60,6 +60,8 @@ namespace project
 
 
 
+
+            /*-------------------------------------------------------PROBLEM 8-----------------------------------------------------------------------------------------*/
             //int[] number = { 4, 5, 6 };
             //var CalculateFactorial = new NumberFactorialCalculator();
             //for(int i=0; i<number.Length; i++)
@@ -73,19 +75,24 @@ namespace project
 
 
 
+
+            /*-------------------------------------------------------PROBLEM 9-----------------------------------------------------------------------------------------*/
+
             //string[] strs = { "hello", "world", "code" };
             //var StringReversal = new StringReversalTree();
-            //for(int i = 0; i < strs.Length; i++)
+            //for (int i = 0; i < strs.Length; i++)
             //{
             //    Console.WriteLine($"{strs[i]} => " + StringReversal.ReverseString(strs[i]));
             //}
             //Console.Write("Enter a string: ");
             //string userInput = Console.ReadLine();
-            //Console.WriteLine($"{userInput} => " + StringReversal.ReverseString(userInput
+            //Console.WriteLine($"{userInput} => " + StringReversal.ReverseString(userInput);
             //
 
 
 
+
+            /*-------------------------------------------------------PROBLEM 10-----------------------------------------------------------------------------------------*/
 
             //var students = new List<StudentGradeManage>
             //{
@@ -139,7 +146,7 @@ namespace project
             //    else if (avg >= 60) return "D";
             //    return "F";
             //});
-            
+
             //foreach(var group in res)
             //{
             //    Console.WriteLine($"\nGrade {group.Key}");
@@ -178,8 +185,42 @@ namespace project
 
 
 
-            }
 
+
+            /*-------------------------------------------------------PROBLEM 11-----------------------------------------------------------------------------------------*/
+            //var employees = new List<EmployeeHierarchy>
+            //{
+            //    new EmployeeHierarchy(),
+            //    new EmployeeHierarchy("John"),
+            //    new EmployeeHierarchy("Yo", 15000, "General", 2024),
+            //    new EmployeeHierarchy("Mike", 20000),
+            //    new EmployeeHierarchy("Neel", 50000, "IT", 2018),
+            //    new EmployeeHierarchy("Sara", 40000, "Finance", 2020),
+            //};
+
+
+            //int Index = 1;
+            //foreach (var employee in employees)
+            //{
+            //    Console.WriteLine($"Employee {Index++}: {employee.Name}, {employee.Salary}, {employee.Department}, {employee.JoinYear}, Compensetion: {employee.Compensation}");
+            //}
+
+            //int totalEmployees = EmployeeHierarchy.TotalEmployees;
+            //Console.WriteLine("Total Employees: " + totalEmployees);
+
+            //var avg = employees.Average(a => a.Compensation);
+
+            //Console.WriteLine($"Average Compensation: {avg:F2}");
+
+            //var maxSalary = employees.Max(a => a.Compensation);
+            //var highestPaid = employees.Where(e => e.Compensation == maxSalary).Select(e => e.Name).First();
+            //Console.WriteLine($"Highest Paid: {highestPaid} ({maxSalary})");
+
+
+
+
+
+/*-------------------------------------------------------PROBLEM 11-----------------------------------------------------------------------------------------*/
         }
     }
 
