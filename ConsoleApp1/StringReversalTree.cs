@@ -17,8 +17,7 @@ namespace ConsoleApp1
                 return "";
             }
 
-            string reversed = "";
-            return reversed + str[idx] + recur(str, idx - 1);
+            return str[idx] + recur(str, idx - 1);
         }
     }
 }
