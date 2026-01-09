@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ConsoleApp1;
+using System.Numerics;
 
 namespace project
 {
@@ -187,6 +188,7 @@ namespace project
 
 
 
+
             /*-------------------------------------------------------PROBLEM 11-----------------------------------------------------------------------------------------*/
             //var employees = new List<EmployeeHierarchy>
             //{
@@ -220,7 +222,56 @@ namespace project
 
 
 
-/*-------------------------------------------------------PROBLEM 11-----------------------------------------------------------------------------------------*/
+            /*-------------------------------------------------------PROBLEM 12-----------------------------------------------------------------------------------------*/
+            var gamers = new List<GamingTournamentRegistrationSystem>
+            {
+                new GamingTournamentRegistrationSystem("user1"),
+                new GamingTournamentRegistrationSystem("user2", 60, "General", "T001"),
+                new GamingTournamentRegistrationSystem("pro_gamer", 85, "CS", "T001"),
+                new GamingTournamentRegistrationSystem("newbie", 150, "FIFA"),
+                new GamingTournamentRegistrationSystem("alpha", 45),
+                new GamingTournamentRegistrationSystem("beta", 70, "CS", "T001"),
+                new GamingTournamentRegistrationSystem("solo_king", 20),
+                new GamingTournamentRegistrationSystem("team_guy", 55, "FIFA", "T002")
+            };
+
+            var teams = gamers.Where(p => p.TeamID != "Solo").GroupBy(p => p.TeamID);
+
+            foreach (var team in teams)
+            {
+                if (teams.Count() >=3)
+                {
+                    foreach (var player in team)
+                    {
+                        player.EntryFee -= player.EntryFee * 0.15;
+                    }
+                    Console.WriteLine($"Team {team.Key} Members: {team.Count()} (Team bonus: 15% applied to all)");
+                }
+            }
+
+            int Index = 1;
+
+            foreach (var item in gamers)
+            {
+                Console.WriteLine($"Player {Index++}: {item.UserName}, Level: {item.Level}, TeamID: {item.TeamID}, Entry Fee: {item.EntryFee}, Game Mode: {item.GameAssignment}");
+
+                if (!string.IsNullOrEmpty(item.Warning))
+                {
+                    Console.WriteLine($"{item.Warning}");
+                }
+            }
+
+            Console.WriteLine($"Total Revenue: {GamingTournamentRegistrationSystem.TotalRevenue}");
+
+            var maxFee = gamers.Max(e => e.EntryFee);
+            var topPlayer = gamers.Where(e => e.EntryFee == maxFee).Select(a => a.UserName).First();
+            Console.WriteLine($"Top Player by Fee: {topPlayer} ({maxFee})");
+
+            var SoloPlayers = gamers.Where(e => e.TeamID == "Solo").Count();
+            var TeamPlayers = gamers.Where(e => e.TeamID != "Solo").Count();
+            Console.WriteLine($"Solo Players: {SoloPlayers}, Team Players: {TeamPlayers}");
+
+            Console.WriteLine($"Average Team Size: {teams.Average(t => t.Count()):F1}");
         }
     }
 
